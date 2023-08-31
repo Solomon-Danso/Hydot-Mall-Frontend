@@ -8,6 +8,7 @@ import { useNavigate } from 'react-router-dom'
 import AnimateHeight from 'react-animate-height';
 import { apiServer } from '../Constants /Endpoints';
 import HeadernSearch from '../Components/Headers/HeadernSearch';
+import Home from '../Components/Home/Home';
 
 
 
@@ -124,7 +125,8 @@ const [sysDate, setSysDate] = useState("")
 
     <Routes>
           
-         hey 
+    <Route path="/" element={<Home />} />
+
           
           {
             /*

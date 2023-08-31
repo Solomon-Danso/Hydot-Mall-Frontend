@@ -81,6 +81,11 @@ display: flex;
 flex-direction: column;
 gap: 1rem;
 
+`;
+
+export const SingleButtonDiv = styled.div`
+display: flex;
+flex-direction: column;
 
 `;
 
@@ -135,7 +140,7 @@ border-radius: 50%;
 
 export const MenuButtonLink = styled.div`
 color: ${colors.white};
-font-size:1.5rem;
+font-size:1.2rem;
 cursor: pointer;
 cursor: pointer;
 
@@ -151,7 +156,7 @@ color: ${colors.white};
 
 export const MenuButtonOptionLink = styled.div`
 color: #131313;
-font-size:1.2rem
+font-size:1.2rem;
 cursor: pointer;
 cursor: pointer;
 margin-bottom:0.5rem;
@@ -159,7 +164,7 @@ color: ${colors.white};
 
 &:hover {
   color: ${colors.yellow};
-  font-size:1.25rem;
+  font-size:1.3rem;
 }
 
 `;
@@ -338,7 +343,7 @@ export const AppDesc = styled.p`
 export const Button  = styled.button`
   border: none;
   border: 30px;
-  border-radius: 20px;
+  border-radius: ${({radius})=>radius};
   border: 1px solid ${({ border }) => border};
   background-color: ${({ background }) => background};
   color: ${({ color }) => color};
@@ -400,7 +405,7 @@ export const MenuInfo = styled.div`
 
 background-color: ${colors.card};
 height:7vh;
-font-size: 1.5rem;
+font-size: 1.4rem;
 color: ${colors.white};
 margin-bottom: 5px;
 align-items: center;
@@ -408,6 +413,13 @@ display:flex;
 justify-content: center;
 word-wrap: break-word;
 text-align: center;
+padding: 0.5rem;
+`;
+export const CompanyLogo = styled.img`
+width: 6vw;
+height:7vh;
+   
+
 `;
 
 

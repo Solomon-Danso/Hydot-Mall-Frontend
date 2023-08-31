@@ -15,6 +15,14 @@ export  const colors = {
     card:"#2D334A",
     icon:"#CFD4EC",
     htext:"#7983BB",
+    ctext:"#7366F0",
+    lightgreen:"#264C62",
+    lightblue:"#3A3B64",
+    maingreen:"#00CFE7",
+    lightred:"#4D394B",
+    mainred:"#EA5354",
+    lightsecondgreen:"#2F4A4E",
+    mainsecondgreen:"#29C76F",
 
 
   };
