@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { LoginPage,LoginWrap,LoginDiv,AppName, SchoolLogo, AppDesc, HDSS_Form, FormInput, HDSS_Label, Button } from '../Designs/Styles/Styles'
-import student from "../Designs/Images/2.jpg" 
+import student from "../Designs/Images/background.jpg" 
 import { colors } from '../Designs/Colors'
 import { useNavigate } from 'react-router-dom'
 import { Show } from '../Constants /Alerts'
@@ -107,10 +107,10 @@ const handleSubmit = async (event) => {
           onSubmit={handleSubmit}
           style={{ fontSize: 12 }}
           >
-            <HDSS_Label>ID Number *</HDSS_Label>
+            <HDSS_Label>Email *</HDSS_Label>
            
                 <FormInput
-                  type="text"
+                  type="email"
                   required
                   placeholder="XXXXX"
                   onChange={(e) => setuserId(e.target.value)}
@@ -171,7 +171,7 @@ const handleSubmit = async (event) => {
 
 
           <p style={{ textAlign: "center", fontSize: 10, color: "gray", marginTop:"10vh"}}>
-            Hydot School System © {new Date().getFullYear()} All rights
+            Hydot Mall System © {new Date().getFullYear()} All rights
             reserved.
           </p>
           <p style={{ textAlign: "center", fontSize: 10, color: "gray" }}>
