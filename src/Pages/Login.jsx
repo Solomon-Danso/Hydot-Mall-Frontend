@@ -4,50 +4,14 @@ import student from "../Designs/Images/2.jpg"
 import { colors } from '../Designs/Colors'
 import { useNavigate } from 'react-router-dom'
 import { Show } from '../Constants /Alerts'
-import { apiServer,LoginEndpoint,Teacher,Student,Admin } from '../Constants /Endpoints'
+import { apiServer,LoginEndpoint} from '../Constants /Endpoints'
 import { AES, enc } from 'crypto-js';
 
 const Login = () => {
 
   const navigate = useNavigate();
-  const [userId, setuserId] = useState("");
-  const [userPassword, setuserPassword] = useState("")
-  const [Teach, setTeach] = useState("")
-  const [admin, setadmin] = useState("")
-  
-  useEffect(() => {
-    fetch(apiServer+Teacher, {
-      method: "GET",
-    })
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        return response.text(); 
-      })
-      .then((data) => setTeach(data))
-      .catch((error) => {
-        console.error("Error fetching data:", error);
-      });
-  }, []);
-
-
-  useEffect(() => {
-    fetch(apiServer+Admin, {
-      method: "GET",
-    })
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        return response.text(); 
-      })
-      .then((data) => setadmin(data))
-      .catch((error) => {
-        console.error("Error fetching data:", error);
-      });
-  }, []);
-  
+  const [email, setuserId] = useState("");
+  const [password, setuserPassword] = useState("")
   
 
 const handleSubmit = async (event) => {
@@ -62,25 +26,32 @@ const handleSubmit = async (event) => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({userId, userPassword})
+        body: JSON.stringify({email, password})
       });
 
       const data = await response.json();
+      console.log(data)
   
       if (response.ok) {
         
         Show.hideLoading();
 
-        Show.Success("Login Successfull ");
           sessionStorage.setItem("userDataEnc", AES.encrypt(JSON.stringify(data), '$2a$11$3lkLrAOuSzClGFmbuEAYJeueRET0ujZB2TkY9R/E/7J1Rr2u522CK').toString()); 
-        sessionStorage.setItem("SpecificRole", AES.encrypt(data.specificRole, '$2a$11$3lkLrAOuSzClGFmbuEAYJeueRET0ujZB2TkY9R/E/7J1Rr2u522CK').toString()); 
        
-        if(data.role === "Admin"){
-          navigate("/admin");
-        }
-        else{
-          navigate("/")
-        }
+          Show.proceedOrCancel("Are you sure you want to proceed?", (proceed) => {
+            if (proceed) {
+              Show.Success("Login Successfull");
+       
+              navigate("/dashboard");
+            } else {
+              window.location.reload();
+            }
+          });
+          
+       
+       
+        
+       
         
       } else {
         Show.Attention("Login Failed");

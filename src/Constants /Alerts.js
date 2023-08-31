@@ -1,5 +1,6 @@
 import Swal from "sweetalert2";
-export const AppName = "Hydot School System";
+
+export const AppName = "Hydot Mall System";
 
 export const Show = {
   Success: function(value) {
@@ -30,10 +31,21 @@ export const Show = {
   },
   hideLoading: function() {
     Swal.close();
+  },
+  proceedOrCancel: function(value, callback) {
+    Swal.fire({
+      icon: 'question',
+      title: 'Proceed?',
+      text: value,
+      showCancelButton: true,
+      confirmButtonText: 'Proceed',
+      cancelButtonText: 'Cancel'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        callback(true); // Proceed
+      } else {
+        callback(false); // Cancel
+      }
+    });
   }
 };
-
-
-
-
-
