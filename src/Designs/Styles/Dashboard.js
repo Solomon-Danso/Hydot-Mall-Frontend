@@ -129,14 +129,14 @@ gap:1rem;
 
 export const CardTextDiv = styled.div`
 width: 50%;
-padding:1rem;
+padding:0.5rem;
 gap:0.5rem;
 font-family: OpenSans;
 word-wrap: break-word;
 `;
 
 export const CardImageDiv = styled.img`
-width: 40%;
+width: 45%;
 height:100%;
 
 

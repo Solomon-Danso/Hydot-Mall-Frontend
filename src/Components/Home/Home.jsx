@@ -151,7 +151,7 @@ const Home = () => {
             <StatIcon background = {colors.lightsecondgreen} color={colors.mainsecondgreen}>  <GiMoneyStack size={30}/> </StatIcon>
 
             <StatText>
-            <StatBigText>{formatNumber(9876529896)}</StatBigText>
+            <StatBigText>{formatNumber(9876529)}</StatBigText>
             <StatSmallText>Revenue</StatSmallText>
 
             </StatText>
