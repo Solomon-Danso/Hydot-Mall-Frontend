@@ -131,13 +131,14 @@ export const CardTextDiv = styled.div`
 width: 50%;
 padding:1rem;
 gap:0.5rem;
-font-family: OpenSans
+font-family: OpenSans;
+word-wrap: break-word;
 `;
 
 export const CardImageDiv = styled.img`
-width: 50%;
-height:83%;
-padding:1rem;
+width: 40%;
+height:100%;
+
 
 `;
 
@@ -183,14 +184,15 @@ export const StatCard = styled.div`
 
 export const StatIcon = styled.div`
   background: ${({ background }) => background};
-   color: ${({ color }) => color};
-  font-size: 1.0rem;
-border-radius:50%;
-padding:1.5rem;
+  color: ${({ color }) => color};
+  width: 1rem; /* Adjust the width for the reduced background */
+  height: 1rem; /* Adjust the height for the reduced background */
+  border-radius: 50%;
+  padding: 0.75rem; /* Reduce the padding for the reduced background */
   display: flex;
   justify-content: center;
   align-items: center;
- 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 `;
 
 export const StatText = styled.div`

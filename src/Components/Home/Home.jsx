@@ -45,15 +45,15 @@ const Home = () => {
 
   const formatNumber = (number) => {
     if (number >= 1000000000000000) {
-      return (number / 1000000000000000).toFixed(1) + 'Q';
+      return (number / 1000000000000000).toFixed(3) + 'Q';
     } else if (number >= 1000000000000) {
-      return (number / 1000000000000).toFixed(1) + 'T';
+      return (number / 1000000000000).toFixed(3) + 'T';
     } else if (number >= 1000000000) {
-      return (number / 1000000000).toFixed(1) + 'B';
+      return (number / 1000000000).toFixed(3) + 'B';
     } else if (number >= 1000000) {
-      return (number / 1000000).toFixed(1) + 'M';
+      return (number / 1000000).toFixed(3) + 'M';
     } else if (number >= 1000) {
-      return (number / 1000).toFixed(1) + 'K';
+      return (number / 1000).toFixed(3) + 'K';
     }
     return number.toString();
   };
@@ -115,7 +115,7 @@ const Home = () => {
             <CardRow>
 
             <StatCard onClick={()=>{navigate("/dashboard/Sales")}}>
-            <StatIcon background = {colors.lightblue} color={colors.ctext}>  <MdOutlineSell /> </StatIcon>
+            <StatIcon background = {colors.lightblue} color={colors.ctext}>  <MdOutlineSell size={30}/> </StatIcon>
 
             <StatText>
             <StatBigText>{formatNumber(230000)}</StatBigText>
@@ -126,7 +126,7 @@ const Home = () => {
             </StatCard>
 
             <StatCard onClick={()=>{navigate("/dashboard/Customers")}}>
-            <StatIcon background = {colors.lightgreen} color={colors.maingreen}>  <RiGroupLine /> </StatIcon>
+            <StatIcon background = {colors.lightgreen} color={colors.maingreen}>  <RiGroupLine size={30}/> </StatIcon>
 
             <StatText>
             <StatBigText>{formatNumber(8549)}</StatBigText>
@@ -137,7 +137,7 @@ const Home = () => {
             </StatCard>
 
             <StatCard onClick={()=>{navigate("/dashboard/Products")}}>
-            <StatIcon background = {colors.lightred} color={colors.mainred}>  <HiOutlineShoppingCart /> </StatIcon>
+            <StatIcon background = {colors.lightred} color={colors.mainred}>  <HiOutlineShoppingCart size={30}/> </StatIcon>
 
             <StatText>
             <StatBigText>{formatNumber(98765)}</StatBigText>
@@ -148,7 +148,7 @@ const Home = () => {
             </StatCard>
 
             <StatCard onClick={()=>{navigate("/dashboard/Account")}}>
-            <StatIcon background = {colors.lightsecondgreen} color={colors.mainsecondgreen}>  <GiMoneyStack /> </StatIcon>
+            <StatIcon background = {colors.lightsecondgreen} color={colors.mainsecondgreen}>  <GiMoneyStack size={30}/> </StatIcon>
 
             <StatText>
             <StatBigText>{formatNumber(9876529896)}</StatBigText>
